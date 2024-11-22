@@ -23,28 +23,30 @@ function UserForm({ onClose, onSave, roles, user }) {
     onClose();
   };
 
+  const inputClass="w-full mb-3 p-2 border rounded text-black";
+
   return (
     <div className="absolute top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 flex justify-center items-center">
-      <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
+      <div className="bg-black border shadow shadow-white rounded-lg text-white  p-6 w-full max-w-md">
         <h3 className="text-xl font-bold mb-4">{user ? "Edit User" : "Add User"}</h3>
         <input
           type="text"
           placeholder="Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full mb-3 p-2 border rounded"
+          className={inputClass}
         />
         <input
           type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full mb-3 p-2 border rounded"
+          className={inputClass}
         />
         <select
           value={role}
           onChange={(e) => setRole(e.target.value)}
-          className="w-full mb-3 p-2 border rounded"
+          className={inputClass}
         >
           <option value="" disabled>
             Select Role
@@ -65,13 +67,13 @@ function UserForm({ onClose, onSave, roles, user }) {
         </label>
         <div className="flex justify-end gap-2">
           <button
-            className="bg-gray-300 px-4 py-2 rounded"
+            className="text-white border bg-red-500 px-4 py-2 rounded"
             onClick={onClose}
           >
             Cancel
           </button>
           <button
-            className="bg-blue-500 text-white px-4 py-2 rounded"
+            className="bg-zinc-900 border text-white px-4 py-2 rounded"
             onClick={handleSubmit}
           >
             Save

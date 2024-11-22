@@ -9,7 +9,7 @@ function Dashboard() {
   const [activeTab, setActiveTab] = useState("users");
 
   return (
-    <div className="dashboard">
+    <div className="dashboard h-screen">
       <nav className="dashboard-nav flex justify-between bg-black border-b-[0.25px] border-slate-100 py-4 px-8">
         <div>
           <h1 className="text-white text-xl">RBAC</h1>
