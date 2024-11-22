@@ -44,12 +44,12 @@ function RoleTable() {
 
   return (
     <div className="container mx-auto p-6">
-      <div className="bg-white shadow-lg rounded-lg p-6">
+      <div className="bg-zinc-900 border shadow-lg rounded-lg p-6">
         {/* Header Section */}
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold text-gray-700">Role Management</h2>
+          <h2 className="text-2xl font-bold text-white">Role Management</h2>
           <button
-            className="bg-blue-500 text-white font-semibold px-5 py-2 rounded-full shadow-lg hover:bg-blue-600 transition duration-300"
+            className="bg-white border text-black font-semibold px-5 py-2 rounded-md shadow-lg hover:bg-gray-200 transition duration-300"
             onClick={() => setShowForm(true)}
           >
             {editingRole ? "Edit Role" : "Add Role"}
@@ -65,8 +65,8 @@ function RoleTable() {
 
         {/* Roles Table */}
         <div className="overflow-x-auto">
-          <table className="table-auto w-full bg-gray-50 shadow-md rounded-lg">
-            <thead className="bg-gradient-to-r from-green-500 to-green-700 text-white">
+          <table className="table-auto w-full bg-zinc-900 shadow-md rounded-md border">
+            <thead className="bg-gradient-to-r from-zinc-900 to-zinc-800 text-white">
               <tr>
                 <th className="px-4 py-3 text-left">Role Name</th>
                 <th className="px-4 py-3 text-left">Permissions</th>
@@ -78,8 +78,8 @@ function RoleTable() {
                 <tr
                   key={role.id}
                   className={`${
-                    index % 2 === 0 ? "bg-gray-100" : "bg-white"
-                  } hover:bg-gray-200`}
+                    index % 2 === 0 ? "bg-zinc-700" : "bg-zinc-800"
+                  } text-white`}
                 >
                   <td className="px-4 py-3 border">{role.name}</td>
                   <td className="px-4 py-3 border">
@@ -87,7 +87,7 @@ function RoleTable() {
                   </td>
                   <td className="px-4 py-3 border flex gap-2">
                     <button
-                      className="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 transition"
+                      className="bg-white text-black px-3 py-1 rounded hover:bg-gray-300 transition"
                       onClick={() => {
                         setEditingRole(role);
                         setShowForm(true);
@@ -151,14 +151,14 @@ function RoleForm({ onClose, onSave, role, error }) {
 
   return (
     <div className="absolute top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 flex justify-center items-center">
-      <div className="bg-white rounded-lg shadow-lg p-6 w-96">
+      <div className="bg-black border shadow shadow-white rounded-lg text-white  p-6 w-full max-w-md">
         <h3 className="text-xl font-bold mb-4">{role ? "Edit Role" : "Add Role"}</h3>
         <input
           type="text"
           placeholder="Role Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full mb-3 p-2 border rounded"
+          className="w-full mb-3 p-2 border rounded text-black"
         />
         <div className="mb-4">
           <label className="block mb-2 font-semibold">Permissions</label>
@@ -189,13 +189,13 @@ function RoleForm({ onClose, onSave, role, error }) {
 
         <div className="flex justify-end gap-2">
           <button
-            className="bg-gray-300 px-4 py-2 rounded"
+            className="text-white border bg-red-500 px-4 py-2 rounded"
             onClick={onClose}
           >
             Cancel
           </button>
           <button
-            className="bg-green-500 text-white px-4 py-2 rounded"
+            className="bg-zinc-900 border text-white px-4 py-2 rounded"
             onClick={handleSubmit}
           >
             Save

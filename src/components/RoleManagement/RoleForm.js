@@ -23,7 +23,7 @@ function RoleForm({ onClose, onAdd }) {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white rounded-lg p-6 shadow-lg w-full max-w-md">
+      <div className="bg-black border shadow shadow-white rounded-lg text-white  p-6 w-full max-w-md">
         <h3 className="text-xl font-bold mb-4">Add Role</h3>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -68,7 +68,7 @@ function RoleForm({ onClose, onAdd }) {
             </button>
             <button
               type="submit"
-              className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+              className="bg-zinc-900 border text-white px-4 py-2 rounded"
             >
               Save Role
             </button>
