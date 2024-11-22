@@ -40,12 +40,12 @@ function UserTable() {
 
   return (
     <div className="container mx-auto p-6">
-      <div className="bg-white shadow-lg rounded-lg p-6">
+      <div className="bg-zinc-900 border shadow-lg rounded-lg p-6">
         {/* Header Section */}
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold text-gray-700">User Management</h2>
+          <h2 className="text-2xl font-bold text-white">User Management</h2>
           <button
-            className="bg-blue-500 text-white font-semibold px-5 py-2 rounded-full shadow-lg hover:bg-blue-600 transition duration-300"
+            className="bg-white border text-black font-semibold px-5 py-2 rounded-md shadow-lg hover:bg-gray-200 transition duration-300"
             onClick={() => setShowForm(true)}
           >
             {editingUser ? "Edit User" : "Add User"}
@@ -54,8 +54,8 @@ function UserTable() {
 
         {/* Users Table */}
         <div className="overflow-x-auto">
-          <table className="table-auto w-full bg-gray-50 shadow-md rounded-lg">
-            <thead className="bg-gradient-to-r from-blue-500 to-blue-700 text-white">
+          <table className="table-auto w-full bg-zinc-900 shadow-md rounded-md border">
+            <thead className="bg-gradient-to-r from-zinc-900 to-zinc-800 text-white">
               <tr>
                 <th className="px-4 py-3 text-left">Name</th>
                 <th className="px-4 py-3 text-left">Email</th>
@@ -69,8 +69,8 @@ function UserTable() {
                 <tr
                   key={user.id}
                   className={`${
-                    index % 2 === 0 ? "bg-gray-100" : "bg-white"
-                  } hover:bg-gray-200`}
+                    index % 2 === 0 ? "bg-zinc-700" : "bg-zinc-800"
+                  } text-white`}
                 >
                   <td className="px-4 py-3 border">{user.name}</td>
                   <td className="px-4 py-3 border">{user.email}</td>
@@ -80,7 +80,7 @@ function UserTable() {
                   </td>
                   <td className="px-4 py-3 border flex gap-2">
                     <button
-                      className="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 transition"
+                      className="bg-white text-black px-3 py-1 rounded hover:bg-gray-300 transition"
                       onClick={() => {
                         setEditingUser(user);
                         setShowForm(true);

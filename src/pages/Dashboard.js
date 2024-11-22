@@ -10,7 +10,7 @@ function Dashboard() {
 
   return (
     <div className="dashboard">
-      <nav className="dashboard-nav flex justify-between bg-black border-b-[0.5px] border-slate-100 py-4 px-8">
+      <nav className="dashboard-nav flex justify-between bg-black border-b-[0.25px] border-slate-100 py-4 px-8">
         <div>
           <h1 className="text-white text-xl">RBAC</h1>
         </div>
