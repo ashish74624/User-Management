@@ -10,10 +10,13 @@ function Dashboard() {
 
   return (
     <div className="dashboard h-screen">
-      <nav className="dashboard-nav flex justify-between bg-black border-b-[0.25px] border-slate-100 py-4 px-8">
+      <nav className="dashboard-nav flex justify-center bg-black border-b-[0.25px] border-slate-100 py-4 ">
         <div>
           <h1 className="text-white text-xl">Role Based Access Control UI</h1>
         </div>
+        
+      </nav>
+      <nav className="dashboard-nav flex justify-center bg-black  py-4 px-8">
         <div>
             <button
               className={`mx-2 px-4 py-1.5 rounded-md font-semibold border ${
@@ -23,7 +26,7 @@ function Dashboard() {
               }`}
               onClick={() => setActiveTab("users")}
               >
-              Users
+              User Management
             </button>
             <button
               className={`mx-2 px-6 py-2 rounded-md font-semibold border ${
@@ -33,7 +36,7 @@ function Dashboard() {
               }`}
               onClick={() => setActiveTab("roles")}
               >
-              Roles
+              Role Management
             </button>
           </div>
       </nav>
